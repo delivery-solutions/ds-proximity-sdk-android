@@ -47,17 +47,12 @@ Usage
     
 
     
-    //Implementation Example
+      //Implementation Example
     
       import co.deliverysolutions.proximity.ProximitySDK  // Import Proximity SDK package
     
-      /// 
-      ///
-    
       lateinit var proximitySDKObject: ProximitySDK // Create Proximty SDK object
     
-      ///
-      ///
     
     /*
     this code will return error if any previous order is running.
@@ -174,12 +169,10 @@ This method will return a boolean value according to SDK tracking Status.
 
     var isBackgroundServiceRunning = proximitySDK.isLocationServiceRunning()
     
-
-### 7. Check location updates status
-
 In case user rejects the location permission, Proximity SDK have these methods to update the status of the user such as Estimated time of arival, Arrived status and Received status.
 
-### 8. Updating ETA
+
+### 7. Updating ETA
 
 
 Estimated time of arival can be shared with SDK by using the below
@@ -199,7 +192,7 @@ method.
 
       })
 
-### 9. Arriving to the store
+### 8. Arriving to the store
 
 Arrived Status can be shared with SDK using the below method.
 
@@ -216,24 +209,7 @@ Arrived Status can be shared with SDK using the below method.
       })
 
 
-### 10. Arriving to the store
-
-Arrived Status can be shared with SDK using the below method.
-
-    fun setArrived(orderID: String, callbacks: CallBacks)
-
-      proximitySDK.setArrived(orderID = {orderID}, object : CallBacks{
-          override fun success(success: String) {
-              Toast.makeText(applicationContext,success,Toast.LENGTH_LONG).show()
-          }
-
-          override fun onError(error: String) {
-              Toast.makeText(applicationContext,error,Toast.LENGTH_LONG).show()
-          }
-      })
-
-
-### 11. Completing an Order (Order Received)
+### 9. Completing an Order (Order Received)
 
       fun orderReceived(orderID: String, callbacks: CallBacks)
 
@@ -246,4 +222,8 @@ Arrived Status can be shared with SDK using the below method.
               Toast.makeText(applicationContext,error,Toast.LENGTH_LONG).show()
           }
       })
+      
+## License
+
+Copyright (c) 2022 by [Delivery Solutions](https://www.deliverysolutions.co). All Rights Reserved. Usage of this library implies agreement to abide by the license terms. Please refer to our [Terms of Service](https://www.deliverysolutions.co/terms-of-service).
 
