@@ -2,7 +2,7 @@
 # Official Proximity SDK for Native Android
 &nbsp;
 <p align="center" width="100%">
-    <img width="33%" src="https://images.squarespace-cdn.com/content/v1/6073efa8ab5c5b78808fe878/1618336613080-9PJH9HELYSVDIBCPF7OU/logo.png?format=1500w">
+    <img src="https://raw.githubusercontent.com/delivery-solutions/ds-proximity-sdk-android/master/cover-android.png">
 </p>
 
 &nbsp;
@@ -10,7 +10,7 @@
 Setup
 =====
 
-*   ### Using offline .aar file
+### Using offline .aar file
     
 
 > Download the "aar" file and add it to your project.
@@ -20,7 +20,7 @@ Setup
 
 > Android studio will automatically add the dependency from your local aar file path and will sync your project. After finishing the sync, you are ready to use the Proximity SDK in your project
 
-*   ### RUN-TIME Permissions
+### RUN-TIME Permissions
     
 
 > The following permissions are required in the application's Mainfest file for smooth working of the SDK services.
@@ -31,6 +31,75 @@ Setup
 *   android.permission.FOREGROUND\_SERVICE
 *   android.permission.ACCESS\_BACKGROUND\_LOCATION
 *   android.permission.ACTIVITY\_RECOGNITION
+
+
+### Errors
+
+> Proximity SDK provides error codes with simple description. Developers can make use of the error code to meet the application logic.
+
+```java
+
+       //if another order-id is running in the background.
+       ANOTHER_ORDER_RUNNING(
+       errorCode = 0, 
+       description = "Another Order ID is currently running. " +
+           "You can use forceInit=true for stop on going tracking and continue with this one."),
+
+        //if invalid organisation is passed to sdk
+        INVALID_ORGANISATION_ID(
+            errorCode = 1, 
+            description = "Invalid organisation ID"),
+            
+
+        //when sdk can't access the delivery
+        CANT_ACCESS_SERVER(
+            errorCode = 2, 
+            description = "We are not able to connect to our servers." +
+                "Please try again later."),
+    
+    
+        //if sdk is not initialized using init method
+        SDK_N0T_INITIALIZED(
+            errorCode = 3, 
+            description =  "Please init SDK using Organisation ID " +
+                "before using SDK"),
+    
+    
+        //if order id is invalid
+        INVALID_ORDER_ID(
+            errorCode = 4, 
+            description = "Please provide valid Order ID"),
+    
+    
+    
+        //if the user is invalid
+        INVALID_USER_INFO(
+            errorCode = 5, 
+            description =  "Please provide valid User info"),
+    
+    
+    
+        //for api success
+        SUCCESS(
+            errorCode = 6, 
+            description = "Success"),
+    
+    
+    
+        //for api error
+        ERROR(
+            errorCode = 7, 
+            description =  "Error"),
+    
+    
+    
+        //when permission not enabled by the user
+        PERMISSION_NOT_ENABLED(
+            errorCode = 8, 
+            description = "Location permission is not enabled");
+ 
+
+```
 
 
 Usage
