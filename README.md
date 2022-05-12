@@ -1,4 +1,6 @@
-  
+[![License](https://img.shields.io/badge/LICENSE-Commercial-blue?style=flat)](https://cocoapods.org/pods/DSProximity)
+[![Platform](https://img.shields.io/badge/Platform-android-red?style=flat)](https://cocoapods.org/pods/DSProximity)
+
 # Official Proximity SDK for Native Android
 &nbsp;
 <p align="center" width="100%">
